@@ -3,35 +3,24 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    var romanToInt = (s) =>{
-        const romanMap = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
+        const stack = [];
+        const parenthesesMap = {
+            '(': ')',
+            '{': '}',
+            '[': ']'
         };
     
-        let total = 0;
-        const length = s.length;
-    
-        for (let i = 0; i < length; i++) {
-            const currentVal = romanMap[s[i]];
-            const nextVal = romanMap[s[i + 1]];
-    
-            if (nextVal > currentVal) {
-                total -= currentVal;
+        for (let char of s) {
+            if (parenthesesMap[char]) {
+                stack.push(char);
             } else {
-                total += currentVal;
+                if (stack.length === 0 || parenthesesMap[stack.pop()] !== char) {
+                    return false; 
+                }
             }
         }
-    
-        return total;
-    
-};
-module.exports={romanToInt}
+    };
+ console.log(isValid("()"));
 
 
 module.exports = { isValid };
