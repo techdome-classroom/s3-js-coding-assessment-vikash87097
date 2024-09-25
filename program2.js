@@ -26,11 +26,7 @@
                 total += currentVal;
             }
         }
-    
         return total;
-    
 };
- 
-
-
+console.log(romanToInt())
 module.exports={romanToInt}
