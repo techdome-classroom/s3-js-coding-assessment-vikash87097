@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s) {
     var romanToInt = (s) =>{
         const romanMap = {
             'I': 1,
