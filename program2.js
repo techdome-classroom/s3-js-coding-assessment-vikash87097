@@ -28,5 +28,5 @@
         }
         return total;
 };
-console.log(romanToInt("III" ));
+
 module.exports={romanToInt}
